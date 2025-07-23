@@ -14,6 +14,8 @@ router.post("/", authMiddleware, snippetController.newSnippet);
 
 router.put("/", authMiddleware, snippetController.updateSnippet);
 
+router.post('/ai-optimize', authMiddleware, snippetController)
+
 router.put(
   "/publicity-request",
   authMiddleware,

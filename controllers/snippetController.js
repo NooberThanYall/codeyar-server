@@ -1,4 +1,5 @@
 import Snippet from "../models/SnippetModel.js";
+import { getAISuggestion } from "../service/opanAi.js";
 import { Activity } from "./../models/logs/ActivityModel.js";
 
 const newSnippet = async (req, res) => {
@@ -99,6 +100,18 @@ const getPublicSnippets = async (req, res, _) => {
     res.status(500);
   }
 };
+
+
+const optimizeSippetAI = async (req, res, _) => {
+   try {
+    const {inputCode} = req.body;
+
+    const {code} = await getAISuggestion(inputCode)
+    
+   } catch (error) {
+    
+   }
+}
 
 export default {
   newSnippet,
