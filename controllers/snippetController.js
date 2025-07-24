@@ -108,8 +108,11 @@ const optimizeSippetAI = async (req, res, _) => {
 
     const {code} = await getAISuggestion(inputCode)
     
+
+    res.status(200).json({code})
+
    } catch (error) {
-    
+    res.status(500).json({error: error.message})
    }
 }
 
