@@ -2,10 +2,9 @@
 import OpenAI from "openai";
 
 export const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // بهتره اینو تو env بذاری
+  apiKey:
+    "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", // بهتره اینو تو env بذاری
 });
-
-
 
 export async function getAISuggestion(codeSnippet) {
   const response = await openai.chat.completions.create({
@@ -30,6 +29,6 @@ export async function getAISuggestion(codeSnippet) {
 
   return {
     full: fullText,
-    code: onlyCode
+    code: onlyCode,
   };
 }

@@ -6,7 +6,7 @@ import adminMiddleware from "./../middleware/AdminMiddleware.js";
 
 router.get("/", authMiddleware, snippetController.getUserSnippets);
 
-router.get("/:id", authMiddleware, snippetController.getSingleSnippet );
+router.get("/:id", authMiddleware, snippetController.getSingleSnippet);
 
 router.get("/community", adminMiddleware, snippetController.getPublicSnippets);
 
@@ -14,7 +14,11 @@ router.post("/", authMiddleware, snippetController.newSnippet);
 
 router.put("/", authMiddleware, snippetController.updateSnippet);
 
-router.post('/ai-optimize', authMiddleware, snippetController)
+router.post(
+  "/ai-optimize",
+  authMiddleware,
+  snippetController.optimizeSnippetAI
+);
 
 router.put(
   "/publicity-request",

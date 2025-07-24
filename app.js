@@ -8,7 +8,7 @@
 // import userRoutes from './routes/userRoutes.js';
 // import statRoutes from './routes/app/statRoutes.js';
 // import planRoutes from './routes/purchase/planRoutes.js';
-// import { configDotenv } from 'dotenv';
+import { configDotenv } from 'dotenv';
 // import cookieParser from 'cookie-parser';
 import cookieParser from "cookie-parser";
 import { json } from "express";
@@ -72,6 +72,7 @@ class Application {
     this.connectDB();
     this.createServer();
     this.createRoute();
+    configDotenv();
   }
 
   configureAplication() {

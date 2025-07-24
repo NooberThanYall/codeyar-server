@@ -102,7 +102,7 @@ const getPublicSnippets = async (req, res, _) => {
 };
 
 
-const optimizeSippetAI = async (req, res, _) => {
+const optimizeSnippetAI = async (req, res, _) => {
    try {
     const {inputCode} = req.body;
 
@@ -123,5 +123,6 @@ export default {
   requestSnippetPublicityApprovementByAdmin,
   approveSnippetPublicity,
   getPublicSnippets,
-  getSingleSnippet
+  getSingleSnippet,
+  optimizeSnippetAI
 };
